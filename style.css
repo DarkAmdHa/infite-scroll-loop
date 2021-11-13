@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.names-flex {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+.names-flex::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.names-flex {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.names-flex.names-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
