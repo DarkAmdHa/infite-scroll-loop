@@ -26,3 +26,7 @@ body {
   padding-top: 0;
   padding-bottom: 0;
 }
+.section.content.wf-section {
+  z-index: 3;
+  height: 100% !important;
+}
