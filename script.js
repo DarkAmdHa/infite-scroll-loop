@@ -54,12 +54,12 @@ function scrollUpdate() {
     scrollPos = getScrollPos();
     if (scrollPos + innerHeight >= scrollHeight - 5) {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
-      console.log(innerHeight);
-      console.log(context.scrollTop);
+      alert("loops bottom reached");
       setScrollPos(context.scrollTop - h); // Scroll to
       disableScroll = true;
     } else if (scrollPos <= 1) {
       // Scroll to the bottom when you reach the top
+      alert("loops top reached");
 
       setScrollPos(h);
       disableScroll = true;
@@ -75,24 +75,6 @@ function scrollUpdate() {
 }
 
 function onLoad() {
-  Array.from(items, (item, index) => {
-    const clone = item.cloneNode(true);
-    context.appendChild(clone);
-    clone.classList.add("js-clone");
-  });
-
-  Array.from(items, (item, index) => {
-    const clone = item.cloneNode(true);
-    context.appendChild(clone);
-    clone.classList.add("js-clone");
-  });
-
-  Array.from(items, (item, index) => {
-    const clone = item.cloneNode(true);
-    context.appendChild(clone);
-    clone.classList.add("js-clone");
-  });
-
   Array.from(items, (item, index) => {
     const clone = item.cloneNode(true);
     context.appendChild(clone);
