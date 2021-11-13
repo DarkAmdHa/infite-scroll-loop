@@ -1,8 +1,10 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  width: 100%;
+  overflow: auto;
   background: #fff;
+  position: fixed;
 }
 
 .names-flex {
@@ -12,6 +14,7 @@ body {
   -webkit-overflow-scrolling: touch;
   width: 100%;
 }
+
 .names-flex::-webkit-scrollbar {
   display: none;
 }
