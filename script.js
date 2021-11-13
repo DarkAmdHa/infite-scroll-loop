@@ -53,7 +53,7 @@ function scrollUpdate() {
 
     if (scrollPos + innerHeight >= scrollHeight - 5) {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
-      setScrollPos(context.scrollTop - h); // Scroll to
+      setScrollPos(context.scrollTop - 3 * h); // Scroll to
       disableScroll = true;
     } else if (scrollPos <= 1) {
       // Scroll to the bottom when you reach the top
@@ -65,7 +65,7 @@ function scrollUpdate() {
       // Disable scroll-jumping for a short time to avoid flickering
       window.setTimeout(function () {
         disableScroll = false;
-      }, 40);
+      }, 60);
     }
   }
 }
