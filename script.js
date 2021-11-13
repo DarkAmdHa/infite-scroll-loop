@@ -8,18 +8,6 @@ var doc = window.document,
   scrollPos = 0,
   clonesHeight = 0;
 
-items.forEach((item) => {
-  //Getting the initial height before cloning
-  let itemH = item.getBoundingClientRect().height;
-  itemH += parseInt(
-    window.getComputedStyle(item).marginBottom +
-      window.getComputedStyle(item).marginTop +
-      window.getComputedStyle(item).paddingBottom +
-      window.getComputedStyle(item).paddingTop
-  ); //Getting the margins and paddings(top and bottom only)
-  h = h + itemH;
-});
-
 function getScrollPos() {
   return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
 }
@@ -39,6 +27,19 @@ function getClonesHeight() {
 }
 
 function reCalc() {
+  items.forEach((item) => {
+    //Getting the initial height before cloning
+    let itemH = item.getBoundingClientRect().height;
+    itemH += parseInt(
+      window.getComputedStyle(item).marginBottom +
+        window.getComputedStyle(item).marginTop +
+        window.getComputedStyle(item).paddingBottom +
+        window.getComputedStyle(item).paddingTop
+    ); //Getting the margins and paddings(top and bottom only)
+    h = h + itemH;
+  });
+
+  console.log("recalculating");
   scrollPos = getScrollPos();
   scrollHeight = context.scrollHeight;
   clonesHeight = getClonesHeight();
@@ -51,17 +52,16 @@ function reCalc() {
 function scrollUpdate() {
   if (!disableScroll) {
     scrollPos = getScrollPos();
-
-    if (scrollPos + innerHeight >= scrollHeight) {
+    if (scrollPos + innerHeight >= scrollHeight - 5) {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
       console.log(innerHeight);
       console.log(context.scrollTop);
-      setScrollPos(h - innerHeight); // Scroll to
+      setScrollPos(context.scrollTop - 3 * h); // Scroll to
       disableScroll = true;
     } else if (scrollPos <= 1) {
       // Scroll to the bottom when you reach the top
 
-      setScrollPos(h * 3);
+      setScrollPos(3 * h);
       disableScroll = true;
     }
 
@@ -75,6 +75,24 @@ function scrollUpdate() {
 }
 
 function onLoad() {
+  Array.from(items, (item, index) => {
+    const clone = item.cloneNode(true);
+    context.appendChild(clone);
+    clone.classList.add("js-clone");
+  });
+
+  Array.from(items, (item, index) => {
+    const clone = item.cloneNode(true);
+    context.appendChild(clone);
+    clone.classList.add("js-clone");
+  });
+
+  Array.from(items, (item, index) => {
+    const clone = item.cloneNode(true);
+    context.appendChild(clone);
+    clone.classList.add("js-clone");
+  });
+
   Array.from(items, (item, index) => {
     const clone = item.cloneNode(true);
     context.appendChild(clone);
