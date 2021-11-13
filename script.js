@@ -56,12 +56,12 @@ function scrollUpdate() {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
       console.log(innerHeight);
       console.log(context.scrollTop);
-      setScrollPos(context.scrollTop - 3 * h); // Scroll to
+      setScrollPos(context.scrollTop - h); // Scroll to
       disableScroll = true;
     } else if (scrollPos <= 1) {
       // Scroll to the bottom when you reach the top
 
-      setScrollPos(3 * h);
+      setScrollPos(h);
       disableScroll = true;
     }
 
