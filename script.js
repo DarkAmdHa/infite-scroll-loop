@@ -51,19 +51,20 @@ function scrollUpdate() {
   if (!disableScroll) {
     scrollPos = getScrollPos();
     console.log(scrollPos);
-    if (scrollPos + innerHeight >= scrollHeight - 3) {
+    if (scrollPos + innerHeight >= scrollHeight - 5) {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
-
+      context.style.overflowY = "hidden";
+      setScrollPos(context.scrollTop - h); // Scroll to
+      disableScroll = false;
       setTimeout(() => {
-        setScrollPos(context.scrollTop - h); // Scroll to
-        disableScroll = false;
-      }, 1500);
+        context.style.overflowY = "scroll";
+      }, 500);
     } else if (scrollPos <= 1) {
       // Scroll to the bottom when you reach the top
       setTimeout(() => {
         setScrollPos(h);
         disableScroll = false;
-      }, 1500);
+      }, 500);
     }
 
     if (disableScroll) {
