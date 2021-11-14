@@ -71,7 +71,6 @@ function scrollUpdate() {
       } else {
         setScrollPos(context.scrollTop - h); // Scroll to
         disableScroll = true;
-        context.style.overflowY = "scroll";
       }
 
       // setTimeout(() => {
