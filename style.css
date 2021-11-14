@@ -1,14 +1,10 @@
 html,
 body {
-  height: 100%;
-  overflow: hidden;
   background: #fff;
 }
 
 .names-flex {
   position: relative;
-  height: 100%;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
   width: 100%;
 }
@@ -26,7 +22,29 @@ body {
   padding-top: 0;
   padding-bottom: 0;
 }
-.section.content.wf-section {
-  z-index: 3;
-  height: 100% !important;
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.loop {
+  position: absolute;
+}
+
+.loop-wrapper {
+  position: relative;
+}
+
+.loop-container {
+  height: 100vh;
+  overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.section.content {
+  overflow: initial;
 }
