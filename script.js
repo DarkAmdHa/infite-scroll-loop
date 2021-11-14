@@ -50,28 +50,28 @@ function reCalc() {
 function scrollUpdate() {
   if (!disableScroll) {
     scrollPos = getScrollPos();
-    // if (scrollPos + innerHeight >= scrollHeight - 5) {
-    //   // Scroll to the top(of the cloned ) when you’ve reached the bottom
-    //   // context.style.overflowY = "hidden";
-    //   var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    //   if (isSafari) {
-    //     s = scrollPos;
-    //     setTimeout(() => {
-    //       setScrollPos(s - h); // Scroll to
-    //       disableScroll = true;
-    //       context.style.overflowY = "scroll";
+    if (scrollPos + innerHeight >= scrollHeight - 5) {
+      // Scroll to the top(of the cloned ) when you’ve reached the bottom
+      // context.style.overflowY = "hidden";
+      // var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      // if (isSafari) {
+      //   s = scrollPos;
+      //   setTimeout(() => {
+      //     setScrollPos(s - h); // Scroll to
+      //     disableScroll = true;
+      //     context.style.overflowY = "scroll";
 
-    //       if (disableScroll) {
-    //         // Disable scroll-jumping for a short time to avoid flickering
-    //         window.setTimeout(function () {
-    //           disableScroll = false;
-    //         }, 40);
-    //       }
-    //     }, 1500);
-    //   } else {
-      
-        setScrollPos(context.scrollTop - h); // Scroll to
-        disableScroll = true;
+      //     if (disableScroll) {
+      //       // Disable scroll-jumping for a short time to avoid flickering
+      //       window.setTimeout(function () {
+      //         disableScroll = false;
+      //       }, 40);
+      //     }
+      //   }, 1500);
+      // } else {
+      setScrollPos(context.scrollTop - h); // Scroll to
+      disableScroll = true;
+      // }
 
       // setTimeout(() => {
       //   context.style.overflowY = "scroll";
