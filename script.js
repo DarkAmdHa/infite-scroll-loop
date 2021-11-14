@@ -84,7 +84,7 @@ function scrollUpdate() {
       // context.style.overflowY = "hidden";
 
       setScrollPos(h);
-      disableScroll = false;
+      disableScroll = true;
 
       // setTimeout(() => {
       //   context.style.overflowY = "scroll";
