@@ -56,11 +56,16 @@ function scrollUpdate() {
       // context.style.overflowY = "hidden";
       var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       if (isSafari) {
-        context.style.overflowY = "hidden";
+        setTimeout(() => {
+          setScrollPos(context.scrollTop - h); // Scroll to
+          disableScroll = false;
+          context.style.overflowY = "scroll";
+        }, 1500);
+      } else {
+        setScrollPos(context.scrollTop - h); // Scroll to
+        disableScroll = false;
+        context.style.overflowY = "scroll";
       }
-      setScrollPos(context.scrollTop - h); // Scroll to
-      disableScroll = false;
-      context.style.overflowY = "scroll";
 
       // setTimeout(() => {
       //   context.style.overflowY = "scroll";
