@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", (_) => {
 
     console.log({ current: scr(), target: scrollAmt });
     if (document.querySelector(".loop-container").scrollTop <= 0) {
-      document.querySelector(".loop-container").scrollTop = h;
+      document.querySelector(".loop-container").scrollTop += h;
       state.renderNext(h);
     }
 
