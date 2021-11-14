@@ -61,7 +61,7 @@ function scrollUpdate() {
           setScrollPos(s - h); // Scroll to
           disableScroll = false;
           context.style.overflowY = "scroll";
-        }, 1500);
+        }, 100);
       } else {
         setScrollPos(context.scrollTop - h); // Scroll to
         disableScroll = false;
