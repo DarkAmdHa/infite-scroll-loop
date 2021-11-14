@@ -90,13 +90,12 @@ function scrollUpdate() {
       //   context.style.overflowY = "scroll";
       // }, 1);
     }
-
-    if (disableScroll) {
-      // Disable scroll-jumping for a short time to avoid flickering
-      window.setTimeout(function () {
-        disableScroll = false;
-      }, 40);
-    }
+  }
+  if (disableScroll) {
+    // Disable scroll-jumping for a short time to avoid flickering
+    window.setTimeout(function () {
+      disableScroll = false;
+    }, 40);
   }
 }
 
