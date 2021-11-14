@@ -56,6 +56,7 @@ function scrollUpdate() {
       // context.style.overflowY = "hidden";
       var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       if (isSafari) {
+        alert("yo");
         s = scrollPos;
         setTimeout(() => {
           setScrollPos(s - h); // Scroll to
