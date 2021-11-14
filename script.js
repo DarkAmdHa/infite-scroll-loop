@@ -58,13 +58,17 @@ function scrollUpdate() {
       disableScroll = false;
       setTimeout(() => {
         context.style.overflowY = "scroll";
-      }, 500);
+      }, 1);
     } else if (scrollPos <= 1) {
       // Scroll to the bottom when you reach the top
+      context.style.overflowY = "hidden";
+
+      setScrollPos(h);
+      disableScroll = false;
+
       setTimeout(() => {
-        setScrollPos(h);
-        disableScroll = false;
-      }, 500);
+        context.style.overflowY = "scroll";
+      }, 1);
     }
 
     if (disableScroll) {
