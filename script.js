@@ -54,40 +54,40 @@ function scrollUpdate() {
     if (scrollPos + innerHeight >= scrollHeight - 5) {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
       // context.style.overflowY = "hidden";
-      // var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      // if (isSafari) {
-      //   let s = scrollPos;
-      //   setTimeout(() => {
-      //     setScrollPos(s - h); // Scroll to
-      //     disableScroll = false;
-      //     context.style.overflowY = "scroll";
-      //   }, 1500);
-      // } else {
-      setScrollPos(context.scrollTop - h); // Scroll to
+      var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      if (isSafari) {
+        setTimeout(() => {
+          setScrollPos(context.scrollTop - h); // Scroll to
+          disableScroll = true;
+          context.style.overflowY = "scroll";
+        }, 1500);
+      } else {
+        setScrollPos(context.scrollTop - h); // Scroll to
+        disableScroll = true;
+        context.style.overflowY = "scroll";
+      }
+
+      // setTimeout(() => {
+      //   context.style.overflowY = "scroll";
+      // }, 1);
+    } else if (scrollPos <= 1) {
+      // Scroll to the bottom when you reach the top
+      // context.style.overflowY = "hidden";
+
+      setScrollPos(h);
       disableScroll = false;
-      context.style.overflowY = "scroll";
+
+      // setTimeout(() => {
+      //   context.style.overflowY = "scroll";
+      // }, 1);
     }
 
-    // setTimeout(() => {
-    //   context.style.overflowY = "scroll";
-    // }, 1);
-  } else if (scrollPos <= 1) {
-    // Scroll to the bottom when you reach the top
-    // context.style.overflowY = "hidden";
-
-    setScrollPos(h);
-    disableScroll = false;
-
-    // setTimeout(() => {
-    //   context.style.overflowY = "scroll";
-    // }, 1);
-  }
-
-  if (disableScroll) {
-    // Disable scroll-jumping for a short time to avoid flickering
-    window.setTimeout(function () {
-      disableScroll = false;
-    }, 40);
+    if (disableScroll) {
+      // Disable scroll-jumping for a short time to avoid flickering
+      window.setTimeout(function () {
+        disableScroll = false;
+      }, 40);
+    }
   }
 }
 
