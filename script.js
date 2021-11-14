@@ -56,10 +56,12 @@ function scrollUpdate() {
       // context.style.overflowY = "hidden";
       var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       if (isSafari) {
-        alert("yo");
+        context.style.overflowY = "hidden";
       }
       setScrollPos(context.scrollTop - h); // Scroll to
       disableScroll = false;
+      context.style.overflowY = "scroll";
+
       // setTimeout(() => {
       //   context.style.overflowY = "scroll";
       // }, 1);
