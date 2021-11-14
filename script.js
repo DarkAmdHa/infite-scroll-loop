@@ -50,13 +50,11 @@ function reCalc() {
 function scrollUpdate() {
   if (!disableScroll) {
     scrollPos = getScrollPos();
-    console.log(scrollPos);
     if (scrollPos + innerHeight >= scrollHeight - 5) {
       // Scroll to the top(of the cloned ) when you’ve reached the bottom
       // context.style.overflowY = "hidden";
       var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       if (isSafari) {
-        alert("yo");
         s = scrollPos;
         setTimeout(() => {
           setScrollPos(s - h); // Scroll to
